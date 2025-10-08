@@ -1,0 +1,341 @@
+body {
+  min-height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url(/images/LA.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/*Headermeny, inspirert av Jesper på gruppen */
+header {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.5s;
+  height: 15px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header a:hover {
+  text-decoration: none;
+  background-color: rgb(172, 180, 62);
+  padding: 2px;
+  border-radius: 4px;
+}
+
+/* Restaurant sign */
+@keyframes blink {
+  /*Jeg har valgt å korte ned koden ved å samme %ene som like verdier */
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #faffe6;
+    text-shadow: 0 0 0.6rem #faffe6, 0 0 1.5rem #edff65,
+      -0.2rem 0.1rem 1rem rgb(216, 255, 101), 0.2rem 0.1rem 1rem #d8ff65,
+      0 -0.5rem 2rem #f0ff24, 0 0.5rem 3rem #f8ff24;
+  }
+  28%,
+  33% {
+    color: #eaff65;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #c5ff24;
+    text-shadow: none;
+  }
+}
+
+@keyframes shine {
+  0% {
+    color: #dce92c;
+    text-shadow: none;
+  }
+  100% {
+    color: #fbffe6;
+    text-shadow: rgb(253, 255, 230), rgb(238, 240, 117), #e5ff65,
+      rgba(255, 245, 101, 0.877), #f9de65, #e0f26b;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  42%,
+  68%,
+  100% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  20% {
+    opacity: 0.99;
+  }
+  39% {
+    opacity: 0.96;
+  }
+  46%,
+  95% {
+    opacity: 0.94;
+  }
+}
+.sign {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 20%;
+  /*justify-content: center; */
+  align-items: center;
+  width: 30%;
+  height: 30%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    rgb(118, 114, 76),
+    transparent
+  ); /* starter fra en farge,falmer til gjennomsiktighet ved ytterkantene, i elliptisk form, og radienten er sentrert på elementet. */
+  letter-spacing: 2;
+  font-size: 70px;
+  color: rgb(211, 220, 114);
+  text-shadow: 0 0 0.6rem #fdffe6, 0 0 1.5rem #e3ff65,
+    -0.2rem 0.1rem 1rem #e0e87a, 0.2rem 0.1rem 1rem #d6ff65,
+    0 -0.5rem 2rem #ccff24, 0 0.5rem 3rem #f8ff24;
+  transform: translate(-50%, -50%); /*Hjelper med plassering */
+  animation: shine 2s forwards, flicker 2s infinite;
+}
+
+.flicker {
+  animation: shine 1s forwards, blink 1.5s 1s infinite;
+}
+
+.fast-flicker {
+  animation: shine 1s forwards, blink 10s 1s infinite;
+}
+
+/*Bilder og hover */
+.pictureContainer {
+  margin: 6% 0 0 36%;
+  position: relative;
+  top: 120px;
+  width: 400px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(97, 81, 81);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  border-radius: 10px;
+  transition: 1s ease-in-out;
+}
+
+.pictureContainer:hover .overlay {
+  height: 100%;
+}
+
+/* Tekst */
+.text1 {
+  width: 100%;
+  margin-top: 10%;
+  color: white;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+}
+
+.text2 {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  margin: 18% 0 0 20%;
+  width: 70%;
+  letter-spacing: 1px;
+}
+
+/*Her er koden for Elvis, car, cafe*/
+
+@keyframes danceElvis {
+  0% {
+    left: 5%;
+
+    margin-top: 5%;
+  }
+  25% {
+    left: 6.5%;
+    margin-top: 4%;
+  }
+  50% {
+    left: 5%;
+    margin-top: 5%;
+  }
+  75% {
+    left: 6.5%;
+    margin-top: 4%;
+  }
+  100% {
+    left: 5%;
+    margin-top: 5%;
+  }
+}
+
+@keyframes getincar {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes outofcar {
+  0% {
+    left: 71%;
+  }
+  25% {
+    left: 74%;
+  }
+  40% {
+    left: 76%;
+  }
+  50% {
+    left: 80%;
+    transform: scaleY(1);
+  }
+  65% {
+    left: 87%;
+    transform: scaleY(0.6);
+  }
+  75% {
+    left: 87%;
+    transform: scaleY(0.4);
+  }
+  85% {
+    left: 87%;
+    transform: scaleY(0.2);
+  }
+  100% {
+    left: 87%;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes movecar {
+  from {
+    left: -2%;
+  }
+  to {
+    left: 63%;
+  }
+}
+
+@keyframes playmusic {
+  from {
+    left: 6%;
+  }
+  to {
+    left: 70%;
+  }
+}
+
+@keyframes stopmusic {
+  0% {
+  left : 70%;
+  height : 20%;
+  }
+  50% {
+  left : 70%;
+  height : 10%;
+  }
+  100% {
+  left : 70%;
+  height : 0%;
+  }
+  }
+
+.animationContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#car {
+  height: 20%;
+  margin-top: 5%;
+  position: absolute;
+  left: -2%;
+  animation-name: movecar;
+  animation-delay: 5s;
+  animation-duration: 4.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#elvis {
+  height: 20%;
+  margin-top: 5%;
+  position: absolute;
+  left: 5%;
+  animation-name: danceElvis, getincar, outofcar;
+  animation-delay: 0ms, 2.5s, 10s;
+  animation-duration: 0.5s, 1s, 2s;
+  animation-timing-function: ease-in-out, ease-in, ease-in-out;
+  animation-iteration-count: 3, 0.5, 1.5;
+  animation-fill-mode: forwards; /* For å beholde siste tilstand etter avsluttet animasjon */
+  animation-iteration-count: 1;
+}
+
+#cafe {
+  height: 30%;
+  margin-top: 0%;
+  position: absolute;
+  right: 1%;
+}
+
+#music {
+  height: 12%;
+  margin-top: 5%;
+  position: absolute;
+  left: 6%;
+   animation-name: playmusic, stopmusic;
+  animation-delay: 5s, 10s;
+  animation-duration: 4.5s, 0.5s;
+  animation-timing-function: ease-in-out, ease-out;
+  animation-iteration-count: 1, 1;
+  animation-fill-mode: forwards;
+}
+

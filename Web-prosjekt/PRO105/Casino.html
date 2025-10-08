@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Casino.css">
+    <title>Explore Three Amazing Casinos in Las Vegas</title>
+</head>
+<body>
+    <header>
+        <!--Header elementer-->
+        <img src="images/Header-Neon-Sign.png" alt="NeonSign" class="neon-sign" style="width: 55%; height: 80px;"/>
+        <nav class="header-nav">
+            <ul> <!--Unordered list-->
+                <li><a href="Home.html">Home</a></li> <!--Navigasjonslenker til andre nettsider-->
+                <li><a href="Hotel.html">Hotels</a></li>
+                <li><a href="Viviana.eksamen.html">Restaurants</a></li>
+                <li><a href="hotel.html#hikes">Hikes</a></li> <!--Listeelement i den uordnede listen-->
+                <li><a class="active" href="min.html#casino">Casino</a></li>
+            </ul>
+        </nav>
+        <div id="roulette-container">
+            <div id="roulette-wheel"></div> <!--Roulette hjulet i header-->
+        </div>
+        <div id="slot-machine-container">
+            <div id="slot-machine"></div> <!--Slot machine i header-->
+        </div>
+    </header>
+    <div id="container">
+        <!-- Venstre sidebar -->
+        <section id="sidebar-left">
+            <nav>
+                <ul>
+                    <li><a href="#luxor">Luxor Hotel & Casino</a></li> <!--Navigasjonslenker liste i sidebar/fører deg til spesefikke steder på nettsiden-->
+                    <li><a href="#bellagio">Bellagio Hotel & Casino</a></li>
+                    <li><a href="#caesars">Caesars Palace Hotel & Casino</a></li>
+                </ul>
+            </nav>
+            <div class="textbox"> <!--Contact support form med Navn, Email og kommentar-->
+                <h2>Contact Support</h2>
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <!-- Hovedinnhold -->
+        <main>
+            <section id="luxor" class="casino-container">
+                <h2>Luxor Hotel & Casino</h2>
+                <div class="slideshow">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="/images/luxor-hotel-casino.jpg" alt="Luxor Hotel & Casino Exterior" class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>The building is a black pyramid<br>Luxor is open 24/7
+                                    <br><br>Address and Contact Information<br><br>3570 Las Vegas Blvd South<br>Las Vegas, NV 89109<br>Phone: 866-227-5938
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/luxor-hotel-inside.jpg" alt="Luxor Hotel & Casino Interior" class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>The Luxor features an ancient Egyptian theme, and includes a 65,214-square-foot casino and 4,407 hotel rooms. The resort's pyramid is 30 stories and contains the world's largest atrium by volume.</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/Luxor-casino-floor.jpg" alt="Luxor Hotel & Casino Floor" class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>65,214 sq ft Casino<br>2,500 Slot machines and 82 table games<br>The Luxor Casino floor offers table games like 
+                                    Craps, Roulette, Blackjack and 3 Card Poker</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Slideshow med generel information om de forskjellige casinoene-->
+            <section id="bellagio" class="casino-container">
+                <h2>Bellagio Hotel & Casino</h2>
+                <div class="slideshow">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="/images/Bellagio.jpg" alt="Bellagio Hotel and Casino Exterior" class="slide">
+                            <div class="overlay"> <!--Hover effekt som fungerer som overlay på bildene som inneholder informasjonene-->
+                                <div class="text"><br>Bellagio is a resort, luxury hotel and casino on the Las Vegas Strip in Paradise, Nevada.
+                                     It is owned by Blackstone Inc. and operated by MGM Resorts International.<br>Bellagio opened on October 15, 1998, with 3,005 rooms in a 36-story tower. 
+                                     Built at a cost of $1.6 billion, it was the world's most expensive resort up to that point.<br>
+                                     <br>When Mirage Restort merged with MGM Grand Inc a 33-story hotel tower, with 928 rooms, was opened in 2004.<br><br>Address and Contact Information<br><br>3600 S Las Vegas Blvd<br>
+                                     Las Vegas, NV 89109<br>Phone: 702-693-7111</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/bellagio-inside-pic.jpg" alt="Bellagio Hotel and Casino " class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>Bellagio opened on October 15, 1998, with 3,005 rooms in a 36-story tower. 
+                                    Built at a cost of $1.6 billion, it was the world's most expensive resort up to that point.</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/bellagio-roulette-table-2.jpg" alt="Bellagio Hotel and Casino Floor" class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>Bellagio's casino is 156,000 sq ft<br>Upon opening, it included 2,700 slot machines and 173 table games.<br>The Casino Floor offers table games like, Blackjack, Roulette and Craps</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="caesars" class="casino-container">
+                <h2>Caesars Palace Hotel & Casino</h2>
+                <div class="slideshow">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="/images/caesars-palace.jpg" alt="Caesars Palace Hotel & Casino Exterior" class="slide">
+                            <div class="overlay">
+                                <div class="text"><br>Caesars Palace is a luxury hotel and casino built in 1966<br>
+                                    The facility is 124,181 sq ft and has 3,960 rooms<br>The theme for caesars is Roman Empire, Caesars contains many statues,
+                                     columns and iconography typical of Hollywood Roman period<br><br>3570 S Las Vegas Blvd, Paradise<br>NV 89109, USA<br>Phone: 866-227-5938</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/Caesars-interior.png" alt="Caesars Palace Hotel & Casino Interior" class="slide">
+                            <div class="overlay">
+                                <div class="text">Caesars offers a wide range of resturant,
+                                     among them are several which serve authentic Chinese cuisine to cater to wealthy East Asian gamblers<br>The reception area as you can see here is spectacular</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/caesars-casino-floor-.jpg" alt="Caesars Palace Hotel & Casino Floor" class="slide">
+                            <div class="overlay">
+                                <div class="text">Caesers Palace has focused on attracting the high rollers
+                                    <br>The casino floor offers a wide varity of table games<br>Blackjack, craps,
+                                     roulette, baccarat, Spanish 21, mini-baccarat, Pai Gow, and Pai Gow poker</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Høyre Sidebar -->
+        <aside id="sidebar-right">
+            <h3>Today's Special</h3>
+            <ul>
+                <li><strong>Luxor:</strong> Free drink at the blackjack table between 6:00 PM and 8:00 PM!</li>
+                <li><strong>Bellagio:</strong> Special discount on show tickets for visitors today.</li>
+                <li><strong>Caesars Palace:</strong> Double points earning for members of the player's club today.</li>
+            </ul>
+            <div id="animation-container" class="dice-animation"> <!--Terning animasjon-->
+                <img src="/images/Dice-1.png" alt="Dice 1">
+                <img src="/images/Dice-2.png" alt="Dice 2">
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2023 Las Vegas Casinos</p>
+    </footer>
+</body>
+</html>

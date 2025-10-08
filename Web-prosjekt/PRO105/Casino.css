@@ -1,0 +1,339 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header { /* Transparent header som er følger med når man scroller nedover på siden "sticky" */
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s;
+    height: 100px;
+    overflow: hidden;
+}
+
+@keyframes neonBlink { /* Keyframes til neon blink rundt header neon skilt */
+    0% {
+      box-shadow: 0 0 10px 5px #ff0101, 0 0 20px 10px #ff0101, 0 0 30px 15px #ff0101;
+    }
+    50% {
+      box-shadow: none;
+    }
+    100% {
+      box-shadow: 0 0 10px 5px #ff0101, 0 0 20px 10px #ff0101, 0 0 30px 15px #ff0101;
+    }
+  }
+  
+  .neon-sign { /* Styling av neon sign container */
+    animation: neonBlink 1s infinite;
+    border-radius: 10px;
+  }
+  
+.header-nav { /* Navigasjonsmeny i header */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.header-nav ul { /* Styling av den uordnede listen som inneholder knapper/navn til de andre nettsidene */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.header-nav li { /* Styling av listeelementene som er i nav menyen */
+    display: inline-block; /* Plasserer de i blokker ved siden av hverandre */
+    border-right: 1px solid #2b2b2b
+}
+
+.header-nav li:last-child { /* Fjerner border på høyre side for det siste elemenetet i listen */
+    border-right: none;
+}
+
+.header-nav li a { /* Styling av anchor elementene/linkene til andre nettsider som er i li */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.header-nav li a:hover:not(.active) { /* Hover funksjon på anchor elementene når. 
+    Bytter bakgrunnsfarge når man hovrer over, men ikke når de er aktive/blir brukt.
+     Denne ble dessverre ubrukelig pga de andre gjorde endringer helt på tampen og ikke implementerte dette på sine nettsider */
+    background-color: #111;
+}
+
+.header-nav .active { /* Hover funksjon på anchor elementene.
+     Bakgrunnsfargen på knappen blir rød når man er på samme side som det står på knappen, men ikke når de er aktive/blir brukt.
+    Denne ble dessverre ubrukelig pga de andre gjorde endringer helt på tampen og ikke implementerte dette på sine nettsider */
+    background-color: red;
+}
+
+#roulette-wheel { /* Stylingen for selve hjulet/bilde av hjulet */
+    width: 100%;
+    height: 100%;
+    background-image: url('Pictures/European-Wheel.png');
+    background-size: cover;
+    animation: spin 4s linear infinite; /* Spin animasjon av hjulet */
+}
+
+@keyframes spin { /* Keyframes for spin animasjonen */
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#slot-machine-container { /* Container for slot machinen som er i headeren*/
+    width: 100px; 
+    height: 100px; 
+    position: absolute;
+    top: 50%; 
+    left: 93%; 
+    transform: translate(-50%, -50%);
+}
+
+#slot-machine { /* Selve slot machinen/bilde */
+    width: 100%;
+    height: 100%;
+    background-image: url('/Pictures/slots-machine-main-screen-casino-game-interface_474577-38.avif');
+    background-size: cover;
+    animation: blink 1s ease-in-out infinite alternate; /* Blinkene animasjons effekt/får bilde av slotmachinen til å blinke*/
+}
+
+@keyframes blink { /* Keyframes til animasjonen */
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+#sidebar-right { /* Venstre sidebar */
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 1em;
+    min-height: 100vh;
+    width: 200px;
+}
+#animation-container.dice-animation { /* Containeren til dice animasjonen */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 100px;
+    margin-top: 100px;
+    position: fixed;
+}
+
+#animation-container.dice-animation img { /* Stylingen på selve terningene */
+    max-width: 70px;
+    margin: 10px;
+    animation: flyDice 5s infinite linear;
+}
+
+@keyframes flyDice { /* Keyframes til terning animasjonen */
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-100px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(0) rotate(180deg);
+    }
+    75% {
+        transform: translateY(100px) rotate(270deg);
+    }
+}
+
+#sidebar-left { /*Styling av sidebar på venstre side */
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 1em;
+    min-height: 100vh;
+    width: 200px;
+    position: sticky;
+    top: 10em; 
+}
+
+nav a:hover { /* Hover animasjon på navigasjonsknappene i sidebar */
+    text-decoration: none;
+    background-color: #111;
+}
+
+#sidebar-left nav { /*Styling av navigasjonsmenyen i venstre sidebar */
+    top: 0;
+    z-index: 1000;
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 1em;
+    width: 180px;
+    border-top: 10em;
+}
+
+#sidebar-left nav ul { /* Styling av den uordnede listen som inneholder knapper/navn til de forskjellig hotellene */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#sidebar-left nav li { /* Styling av listeelementene som er i nav menyen */
+    display: block;
+    border-bottom: 1px solid;
+    position: sticky;
+    padding: 0.5em 0;
+    border-color: #2b2b2b;
+}
+#sidebar-left nav li:last-child {
+    border-bottom: none;
+}
+
+#sidebar-left nav a { /* Styling nav nav knappene */
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    padding: 10px 16px;
+    background: linear-gradient(to right, red, black);
+    background-size: 200% 100%;
+    transition: background-position 0.3s; /* Legg til en jevn overgang på bakgrunnsposisjonen */
+    border-radius: 5px;
+}
+
+#sidebar-left nav a:hover {
+    background-position: -100% 0; /* Flytt bakgrunnen for å vise sluttfargen på hover */
+}
+
+.textbox {
+    margin-left: 10px;
+}
+#roulette-container { /* Roulettehjulet som er i headeren sin container */
+    width: 100px; 
+    height: 100px; 
+    position: absolute;
+    top: 85%; 
+    left: 10%; 
+    transform: translate(-50%, -50%);
+}
+
+#container { /* Hoved container for sidebar left og sidebar right */
+    display: flex;
+    width: 100%;
+}
+
+main { /* Styling for hovedinnholdet */ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.casino-container { /* Styling for selve containeren de 3 forskjellig casinoene ligger i */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1300px;
+    margin-bottom: 30px;
+}
+
+.slideshow { /* Styling for selve slideshowet for hvert casino */
+    overflow: hidden; /* Skjuler innhold som går utenfor slideshow visningen. Mtp forskjellig størrelse på bildene */
+    max-width: 100%;
+    position: relative;
+    border-radius: 5px;
+}
+
+.slides { /* Stil for containeren holder slideshowet */ 
+    display: flex;
+    animation: slideAnimation 30s infinite;
+}
+
+.slide { /* Stil for hvert individuele bilde i slideshowet */ 
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    height: 600px;
+}
+
+.overlay { /* Stilen for det transparente overlayet som kommer over bildet når man hovrer med musen over bildet */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slide:hover .overlay { /* Hover effekten på bildet i slideshowet */
+    opacity: 1;
+}
+
+.text { /* Stylingen av teksten som er inne i overlayet når man hovrer på bildene i slideshowet */
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+@keyframes slideAnimation { /* Keyframe for slideshow animasjonen */
+    0%, 100% {
+        transform: translateX(0);
+    }
+    16.666% {
+        transform: translateX(0);
+    }
+    33.333% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    66.666% {
+        transform: translateX(-200%);
+    }
+    83.333% {
+        transform: translateX(-200%);
+    }
+}
+
+footer { /* Styling av footeren som er nederst på nettsiden */
+    margin-top: auto;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}

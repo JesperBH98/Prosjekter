@@ -1,0 +1,211 @@
+body {
+    
+background-color: rgb(14, 24, 35);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+/* Dette er Jesper kode, bare på headeren!!
+Denne koden under er for den gråe header som følger med på nettleseren 
+hele veien, den er sticky og derfor den følger med
+Jeg har en animasjon på headeren min, det endrer farger når du holder */
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s;
+    height: 15px;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  header a:hover {
+    animation: rotateColors 3s infinite linear;
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  @keyframes rotateColors {
+    0%{
+        background-color: red;
+    }
+    50%{
+        background-color: blue;
+    }
+    100%{
+        background-color: red;
+    }
+}
+
+
+/* dette er her koden min for bilder starter
+jeg lager container, box, rektangel for å få bildet mitt slik den er*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    margin-top: 20%;
+}
+
+.box1, .box2,.box3{
+    width: 100%;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+.rectangles {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    background-color: #21154e5c;
+}
+
+.image {
+    width: 30%;
+    height: 100%;
+    padding: 15px; 
+    box-sizing: border-box; 
+    overflow: hidden; 
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/*Mine flip bokser som inneholder informasjon
+dersom du trykker på det. Jeg har med skilde til hvordan jeg gjordet det  */
+.booking-box{
+    perspective: 1000px;
+    width: 250px;
+    height: 100px;
+    position: relative;
+    margin: 50px ;
+}
+
+.front, 
+.back{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(19, 25, 69);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.booking-box:hover .front{
+    transform: rotateY(180deg);
+}
+.booking-box:hover .back{
+    transform: rotateY(0deg);
+}
+
+
+
+.otherhotels-box{
+    perspective: 1000px;
+    width: 250px;
+    height: 100px;
+    position: relative;
+    margin: 50px auto;
+    margin-top: -125px;
+    left: 480px;
+    
+}
+
+.froont, 
+.baack{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    font-size: 20px;
+    color:white;
+    background-color:rgb(19, 25, 69);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.baack{
+    transform: rotateY(180deg);
+}
+
+.otherhotels-box:hover .froont{
+    transform: rotateY(180deg);
+}
+.otherhotels-box:hover .baack{
+    transform: rotateY(0deg);
+}
+
+/*Mitt hovedskilt på nettleseren
+Den inneholder animasjon som gjør den større*/
+.welcomelasV {
+    position: absolute;
+    display: flex;
+    top: 10%;
+    right: 745px;
+    transform: translate(-50%, -80%);
+    width: 300px;
+    height: 300px;
+    animation: enlarge 1s ease-in-out infinite alternate;
+}
+
+@keyframes enlarge {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+/*Mitt informasjon tekst om de ulike hotellene
+Jeg bruker css stil for å style teksten
+slik jeg vil ha den */
+.text {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-0%, -50%);
+    text-align: center;
+    color: #f7f5f5f0;
+    font-weight: 20px;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+
+p {
+    margin: 0;
+    display: inline-block;
+}
+
+    
